@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* 深邃宝石系 */
+  --primary-color: #4b0082; /* 靛蓝 */
+  --secondary-color: #6a5acd; /* 杜鹃紫 */
+  --accent-color: #8a2be2; /* 蓝紫色 */
+  --background-color: #e6e6fa; /* 薰衣草 */
+  --text-color: #000000; /* 黑色 */
+  --light-text-color: #696969; /* 暗灰色 */
+  --divider-color: #dcdcdc; /* 銀色 */
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.explabody {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+.explacard {
+  margin-top: 20px;
+  width: 300px;
+  height: 500px;
+  background-color: #F2EDE9; /* 莫兰迪浅米色，用于卡片背景 */
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.explaheader { 
+  background-color: var(--secondary-color);
+  color: #F2EDE9; /* 浅色文字与深色背景形成对比 */
+  padding: 20px;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+  font-size: 36px;
+  font-family: "Liu Jian Mao Cao", cursive, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.explacontent {
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  color: var(--text-color);
+  position: relative; /* 设置为相对定位,为绝对定位的子元素创建一个定位上下文。 */
+}
+.explaword {
+  text-align: left;
+  margin-bottom: 20px;
+}
+.explamain {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 36px;
+  color: var(--text-color); /* 使用莫兰迪深灰色作为主要词汇颜色 */
+  margin-bottom: 10px;
+  position: relative;
+}
+.explamain::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 50px;
+  height: 3px;
+  background-color:#0051a2; 
+}
+.explasub {
+  font-size: 14px;
+  color: var(--light-text-color); /* 使用莫兰迪中灰色作为次要文字颜色 */
+  margin: 5px 0;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+}
+.expladivider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--divider-color); /* 使用莫兰迪浅灰色作为分隔线 */
+  margin: 20px 0;
+}
+.expla {
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: left;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--text-color);
+}
+.quote {
+  position: relative;
+  padding-left: 20px;
+  border-left: 5px solid var(--accent-color); /* 使用莫兰迪淡棕色作为引用边框 */
+}
+.background-text {
+  position:absolute;
+  color: rgba(182, 181, 167, 0.15); 
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  max-width: 100%;
+  white-space: wrap; /* 换行 */
+  overflow: hidden; /* 如果文字太长,隐藏溢出部分 */
+  font-size: calc(10px + 15vw); /* 基础大小 + 可变大小 */
+  font-size: clamp(40px, 20px + 15vw, 150px); /* 最小值, 首选值, 最大值 */
+}
+
+
